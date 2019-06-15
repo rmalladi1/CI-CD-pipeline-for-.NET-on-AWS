@@ -1,1 +1,1 @@
-# CI-CD-pipeline-for-.NET-on-AWS
+# CI/CD pipeline for .NET on AWS
