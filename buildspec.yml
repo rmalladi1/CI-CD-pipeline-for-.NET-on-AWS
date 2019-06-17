@@ -8,7 +8,8 @@ phases:
      - nuget.exe restore
   build:
     commands:
-     - msbuild 
+     - msbuild .\WebApplicationSample\WebApplicationSample.csproj /t:Package /p:DeployIisAppPath="Default Web Site"
 artifacts:
   files:
-   - .\WebApplicationSample\bin\*
+   - .\WebApplicationSample\obj\Debug\Package\WebApplicationSample.zip
+  discard-paths: yes
