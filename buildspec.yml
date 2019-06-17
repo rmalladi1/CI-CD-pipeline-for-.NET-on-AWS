@@ -9,3 +9,6 @@ phases:
   build:
     commands:
      - msbuild 
+  artifacts:
+    files:
+    - .\WebApplicationSample\bin\*
