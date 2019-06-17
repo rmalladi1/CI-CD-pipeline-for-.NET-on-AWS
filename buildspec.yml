@@ -9,7 +9,11 @@ phases:
   build:
     commands:
      - msbuild .\WebApplicationSample\WebApplicationSample.csproj /t:Package /p:DeployIisAppPath="Default Web Site"
+  post_build:
+    commands:
+     - mkdir OutputPackage
+     - PowerShell Expand-Archive .\WebApplicationSample\obj\Debug\Package\WebApplicationSample.zip -DestinationPath .\OutputPackage
 artifacts:
   files:
-   - .\WebApplicationSample\obj\Debug\Package\WebApplicationSample.zip
-  discard-paths: yes
+   - '**/*'
+  base-directory: '.\OutputPackage'
